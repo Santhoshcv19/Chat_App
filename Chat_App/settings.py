@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'channels',
+    'room',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Chat_App.wsgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 
 # Database
