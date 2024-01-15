@@ -75,6 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Chat_App.wsgi.application'
+ASGI_APPLICATION = 'Chat_App.routing.application'
 
 CHANNEL_LAYERS = {
     'default': {
