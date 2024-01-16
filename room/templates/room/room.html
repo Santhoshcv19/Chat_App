@@ -38,7 +38,10 @@
 {% block scripts %}
 {{ room.slug|json_script:"json-roomname" }}
 <script>
+    
+
     const roomName = JSON.parse(document.getElementById('json-roomname').textContent)
+    console.log('WebSocket URL:', 'ws://' + window.location.host + '/ws/rooms/' + roomName + '/');
     const chatSocket = new WebSocket(
         'ws://'
         + window.location.host
@@ -46,6 +49,8 @@
         + roomName
         + '/'
     );
+
+    console.log(chatSocket)
 
     chatSocket.onmessage =  function(e) {
         console.log('onmessage')
